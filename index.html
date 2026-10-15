@@ -36,7 +36,7 @@
   <header class="border-b border-slate-800 bg-[#070A12]/90 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
       <div>
-        <a href="#" class="font-extrabold text-xl sm:text-2xl tracking-tight text-white flex items-baseline leading-none">
+        <a href="#" onclick="switchView('landing')" class="font-extrabold text-xl sm:text-2xl tracking-tight text-white flex items-baseline leading-none cursor-pointer">
           <span>Can</span><span class="font-mono text-[#EF4444] font-bold mx-[1px]">I</span><span>SueMyLandlord</span><span class="text-[#EF4444]">.com</span>
         </a>
         <span class="text-[10px] sm:text-[11px] uppercase tracking-widest text-slate-400 font-semibold block mt-1">
@@ -44,24 +44,20 @@
         </span>
       </div>
 
-      <div class="hidden md:flex items-center gap-5 text-xs text-slate-300 font-medium">
-        <div class="flex items-center gap-2 bg-[#0F172A] px-3.5 py-1.5 rounded-full border border-slate-800">
+      <div class="flex items-center gap-3 sm:gap-5 text-xs text-slate-300 font-medium">
+        <div class="hidden md:flex items-center gap-2 bg-[#0F172A] px-3.5 py-1.5 rounded-full border border-slate-800">
           <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
           <span class="text-slate-200 font-semibold">PA & NJ Housing Code Database Active</span>
         </div>
-        <span class="text-slate-700">|</span>
-        <span class="text-slate-400 flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-          </svg>
-          Direct USPS Certified Mail Service
-        </span>
+        <button onclick="switchView('vault')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700 font-mono text-[11px] cursor-pointer transition">
+          🔒 Vault Access
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- MAIN HERO & INTAKE -->
-  <main class="py-5 sm:py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+  <!-- VIEW 1: LANDLING & INTAKE WORKFLOW -->
+  <div id="viewLanding" class="max-w-4xl mx-auto py-5 sm:py-12 px-4 sm:px-6">
     <div class="text-center mb-5 sm:mb-8">
       <div class="text-xs sm:text-sm font-black tracking-wider uppercase bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-300 text-slate-950 px-5 py-2.5 rounded-full shadow-lg shadow-yellow-500/20 inline-flex items-center gap-2 border border-yellow-200/50 mb-4 sm:mb-5">
         <svg class="w-4 h-4 text-slate-950 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +171,6 @@
       <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-8">Built To Compel Landlord Action</h2>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-        <!-- Card 1 -->
         <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
           <div>
             <div class="bg-[#070A12] border border-slate-800 rounded-xl p-3 mb-4 font-mono text-xs">
@@ -193,7 +188,6 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
           <div>
             <div class="bg-[#070A12] border border-slate-800 rounded-xl p-3 mb-4 font-mono text-xs">
@@ -209,7 +203,6 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
           <div>
             <div class="bg-[#070A12] border border-slate-800 rounded-xl p-3 mb-4 font-mono text-xs">
@@ -226,7 +219,6 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
           <div>
             <div class="bg-[#070A12] border border-slate-800 rounded-xl p-3 mb-4 font-mono text-xs">
@@ -251,7 +243,6 @@
       <p class="text-xs text-slate-400 mb-8">Click any tier below to select your delivery method. One-time flat pricing.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-        <!-- Tier 1 -->
         <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
           <div>
             <span class="text-[10px] font-bold uppercase text-slate-400 tracking-wider">Digital DIY</span>
@@ -266,7 +257,6 @@
           <button onclick="openCheckout('Digital DIY ($9)', 9)" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Select Digital PDF ($9)</button>
         </div>
 
-        <!-- Tier 2 -->
         <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
           <div>
             <span class="text-[10px] font-bold uppercase text-slate-400 tracking-wider">Standard Dispatch</span>
@@ -281,7 +271,6 @@
           <button onclick="openCheckout('Standard Dispatch ($14)', 14)" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-xs transition cursor-pointer">Select First-Class Mail ($14)</button>
         </div>
 
-        <!-- Tier 3 (Featured) -->
         <div class="bg-[#0F172A] border-2 border-red-600 rounded-2xl p-6 flex flex-col justify-between relative shadow-xl">
           <div class="absolute -top-3 right-5 bg-emerald-500 text-slate-950 text-[9px] font-black uppercase px-3 py-0.5 rounded-full">Featured : Court Ready</div>
           <div>
@@ -299,7 +288,76 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
+
+  <!-- VIEW 2: SECURE LEGAL VAULT DASHBOARD (POST-PURCHASE) -->
+  <div id="viewVault" class="hidden max-w-5xl mx-auto py-8 px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-800">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded">SECURE LEGAL VAULT ACTIVE</span>
+          <span class="text-xs text-slate-400 font-mono">Case ID: #CISL-2026-PA89</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-white">Tenant Command & Evidence Center</h1>
+      </div>
+      <button onclick="switchView('landing')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold py-2.5 px-4 rounded-xl cursor-pointer transition">
+        ← Back to Dispute Intake
+      </button>
+    </div>
+
+    <!-- VAULT GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <!-- Card 1: Statutory Countdown Clock -->
+      <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase text-slate-400 tracking-wider">Statutory Cure Clock</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        </div>
+        <div id="countdownTimer" class="text-2xl font-extrabold font-mono text-white mb-2">13D : 23H : 59M : 42S</div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">Time remaining for landlord response before default escalation under PA/NJ housing code.</p>
+      </div>
+
+      <!-- Card 2: Certified Mail Status -->
+      <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase text-slate-400 tracking-wider">USPS Certified Mail</span>
+          <span class="text-[10px] font-mono text-blue-400 bg-blue-950/60 border border-blue-800/60 px-2.5 py-0.5 rounded">FORM 3800</span>
+        </div>
+        <div class="text-sm font-bold text-white mb-1">Dispatched via Lob API</div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">Tracking #: <span class="font-mono text-slate-300">9407 1112 0250 1492</span> (Signature Required)</p>
+      </div>
+
+      <!-- Card 3: Assigned Legal Vault Tier -->
+      <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase text-slate-400 tracking-wider">Active Package</span>
+          <span class="text-[10px] font-mono text-amber-400 bg-amber-950/60 border border-amber-800/60 px-2.5 py-0.5 rounded">IRONCLAD</span>
+        </div>
+        <div class="text-sm font-bold text-white mb-1">Attorney Triage Enabled</div>
+        <p class="text-[11px] text-slate-400 leading-relaxed">Local tenant rights counsel alerted for secondary review upon delivery confirmation.</p>
+      </div>
+    </div>
+
+    <!-- LEASE INTELLIGENCE OCR CONTRACT AUDITOR -->
+    <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 mb-8">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+        <div>
+          <h3 class="font-bold text-white text-base">Lease Intelligence OCR Contract Auditor</h3>
+          <p class="text-xs text-slate-400">Scans uploaded lease agreements against illegal penalty clauses and waiver infractions.</p>
+        </div>
+        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-800 px-3 py-1 rounded">Vision OCR Active</span>
+      </div>
+
+      <div class="border-2 border-dashed border-slate-800 rounded-xl p-8 text-center bg-[#070A12]/50">
+        <svg class="w-8 h-8 text-slate-500 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <p class="text-xs text-slate-300 font-semibold mb-1">Drop your lease PDF or contract photos here</p>
+        <p class="text-[11px] text-slate-500 mb-4">Automatically extracts landlord address, late fee caps, and security deposit terms.</p>
+        <button onclick="alert('Lease OCR auditor ready for file upload integration.')" class="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs py-2.5 px-6 rounded-xl cursor-pointer transition">
+          Browse Files
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-800 bg-[#070A12] py-8 px-4 text-center text-xs text-slate-500 space-y-2">
@@ -375,7 +433,7 @@
         <button onclick="closeModal('checkoutModal')" class="text-slate-400 hover:text-white p-1 cursor-pointer">✕</button>
       </div>
 
-      <div class="space-y-4 mb-6">
+      <div id="checkoutFormBody" class="space-y-4 mb-6">
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Landlord or Property Management Name</label>
           <input type="text" id="landlordName" placeholder="e.g. Apex Management LLC or John Smith" class="w-full bg-[#070A12] border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-600" />
@@ -401,12 +459,12 @@
             <span id="summaryTotal" class="text-red-500">$29.00</span>
           </div>
         </div>
-      </div>
 
-      <button onclick="submitCheckout()" class="w-full bg-red-600 hover:bg-red-500 text-white font-black py-4 rounded-xl text-center text-sm shadow-xl cursor-pointer flex items-center justify-center gap-2">
-        <span>Proceed to Secure Stripe Checkout</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-      </button>
+        <button onclick="submitCheckout()" class="w-full bg-red-600 hover:bg-red-500 text-white font-black py-4 rounded-xl text-center text-sm shadow-xl cursor-pointer flex items-center justify-center gap-2">
+          <span>Proceed to Secure Stripe Checkout</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -414,6 +472,18 @@
     function updateCharCount() {
       const textarea = document.getElementById('intakeText');
       document.getElementById('charCount').textContent = textarea.value.length.toLocaleString() + ' / 1,000 characters';
+    }
+
+    function switchView(viewName) {
+      if (viewName === 'vault') {
+        document.getElementById('viewLanding').classList.add('hidden');
+        document.getElementById('viewVault').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.getElementById('viewVault').classList.add('hidden');
+        document.getElementById('viewLanding').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
 
     function startAnalysis() {
@@ -447,8 +517,10 @@
         alert('Please enter your landlord name and service address to continue.');
         return;
       }
-      alert('Connecting to secure Stripe gateway for address: ' + addr + '. (Live Stripe payment trigger ready to connect!)');
+      
+      // Simulate successful payment routing directly to the Secure Legal Vault
       document.getElementById('checkoutModal').classList.add('hidden');
+      switchView('vault');
     }
 
     function closeModal(modalId) {

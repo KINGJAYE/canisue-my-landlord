@@ -1,0 +1,10 @@
+{
+  "name": "can-i-sue-my-landlord",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "dependencies": {}
+}

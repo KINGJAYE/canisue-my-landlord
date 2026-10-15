@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanISueMyLandlord.com : Official Tenant Dispute & Notice Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .animate-spin-custom { animation: spin-slow 0.9s linear infinite; }
+    .subtle-bg-grid {
+      background-image: radial-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#070A12] text-slate-100 font-sans antialiased selection:bg-red-600 selection:text-white subtle-bg-grid">
+
+  <!-- TOP BRANDING & STATUS HEADER -->
+  <header class="border-b border-slate-800 bg-[#070A12]/90 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <div>
+        <a href="#" class="font-extrabold text-xl sm:text-2xl tracking-tight text-white flex items-baseline leading-none">
+          <span>Can</span><span class="font-mono text-[#EF4444] font-bold mx-[1px]">I</span><span>SueMyLandlord</span><span class="text-[#EF4444]">.com</span>
+        </a>
+        <span class="text-[10px] sm:text-[11px] uppercase tracking-widest text-slate-400 font-semibold block mt-1">
+          Official Tenant Dispute & Notice Platform
+        </span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-5 text-xs text-slate-300 font-medium">
+        <div class="flex items-center gap-2 bg-[#0F172A] px-3.5 py-1.5 rounded-full border border-slate-800">
+          <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+          <span class="text-slate-200 font-semibold">PA & NJ Housing Code Database Active</span>
+        </div>
+        <span class="text-slate-700">|</span>
+        <span class="text-slate-400 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#10B981]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          Direct USPS Certified Mail Service
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- STREAMLINED HERO SECTION -->
+  <main class="py-5 sm:py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+    <div class="text-center mb-5 sm:mb-8">
+      <div class="text-xs sm:text-sm font-black tracking-wider uppercase bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-300 text-slate-950 px-5 py-2.5 rounded-full shadow-lg shadow-yellow-500/20 inline-flex items-center gap-2 border border-yellow-200/50 mb-4 sm:mb-5">
+        <svg class="w-4 h-4 text-slate-950 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+        <span>SLUMLORDS COUNT ON TENANTS NOT KNOWING THEIR RIGHTS</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-white tracking-tight leading-[1.1] mb-3.5">
+        Find Out Exactly Which Laws <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
+          Your Landlord Broke.
+        </span>
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-lg max-w-3xl mx-auto font-normal leading-relaxed">
+        We turn your story into an official, court-ready legal notice. Explain your situation in plain English. Our engine matches your grievances against local housing codes and serves your landlord via USPS Certified Mail direct from your phone.
+      </p>
+    </div>
+
+    <!-- INTAKE BOX -->
+    <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-4 sm:p-7 shadow-2xl relative">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3.5 mb-3.5 border-b border-slate-800">
+        <h2 class="font-extrabold text-lg text-white mb-2 sm:mb-0">What did your landlord do?</h2>
+        <div class="flex items-center justify-between sm:justify-end gap-3 text-xs text-slate-300">
+          <div class="flex items-center gap-2">
+            <label for="countySelect" class="font-bold text-slate-300 uppercase tracking-wider text-[11px]">County:</label>
+            <select id="countySelect" class="bg-[#070A12] text-slate-100 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs font-semibold focus:outline-none focus:border-slate-600 cursor-pointer">
+              <option value="Philadelphia">Philadelphia County, PA</option>
+              <option value="Montgomery">Montgomery County, PA</option>
+              <option value="Bucks">Bucks County, PA</option>
+              <option value="Delaware">Delaware County, PA</option>
+              <option value="Camden">Camden County, NJ</option>
+              <option value="Mercer">Mercer County, NJ</option>
+              <option value="Burlington">Burlington County, NJ</option>
+            </select>
+          </div>
+          <span id="charCount" class="text-slate-400 font-mono text-[11px]">0 / 1,000 characters</span>
+        </div>
+      </div>
+
+      <div class="relative mb-4">
+        <textarea 
+          id="intakeText" 
+          rows="5" 
+          maxlength="1000"
+          oninput="updateCharCount()" 
+          placeholder="Explain your situation in plain English. Example: My landlord hasn't fixed our heater for 12 days and it's 48°F inside. He's ignoring my texts..." 
+          class="w-full bg-transparent text-slate-100 placeholder-slate-500 text-sm sm:text-base resize-none focus:outline-none leading-relaxed"
+        ></textarea>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex flex-col items-center justify-center gap-3.5 text-center">
+        <p class="text-xs text-slate-300 font-medium flex items-center justify-center gap-1.5">
+          <svg class="w-4 h-4 text-[#10B981] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          <span>Confidential & Encrypted : No $500/hr lawyer required to take the first step.</span>
+        </p>
+
+        <button 
+          onclick="startAnalysis()" 
+          class="bg-red-600 hover:bg-red-500 text-white font-black py-4 px-10 rounded-xl shadow-xl shadow-red-900/40 text-base sm:text-lg w-full sm:w-auto flex items-center justify-center gap-3 transition-all"
+        >
+          <span>See What Laws Were Broken</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- LABOR ILLUSION MODAL -->
+  <div id="laborModal" class="hidden fixed inset-0 bg-[#070A12]/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0F172A] border border-slate-800 max-w-md w-full rounded-2xl p-6 sm:p-8 text-center shadow-2xl relative">
+      <div class="w-12 h-12 border-2 border-slate-700 border-t-[#10B981] rounded-full animate-spin-custom mx-auto mb-4"></div>
+      <h3 class="text-lg font-bold text-white mb-1">Analyzing Your Dispute</h3>
+      <p id="laborCountyLabel" class="text-xs font-mono text-slate-400 mb-4">Jurisdiction: Philadelphia County</p>
+      <div class="bg-[#070A12] border border-slate-800 rounded-xl p-3.5 mb-5 flex items-center justify-center">
+        <p id="modalStatusText" class="text-xs text-slate-300 font-medium">Organizing factual timeline and expenses...</p>
+      </div>
+      <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+        <div id="modalProgressBar" class="bg-[#10B981] h-full w-1/5 transition-all duration-700"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYWALLED RESULTS MODAL -->
+  <div id="resultsModal" class="hidden fixed inset-0 bg-[#070A12]/90 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0F172A] border border-slate-800 max-w-xl w-full rounded-2xl p-5 sm:p-8 text-left shadow-2xl relative my-6">
+      <div class="flex items-start justify-between gap-3 pb-4 border-b border-slate-800 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-amber-950/60 border border-amber-800/60 flex items-center justify-center text-[#F59E0B]">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg sm:text-xl font-extrabold text-white">3 Actionable Legal Violations Isolated!</h3>
+            <p id="resultCountyText" class="text-xs text-slate-400 font-mono mt-0.5">Jurisdiction: Philadelphia County</p>
+          </div>
+        </div>
+        <button onclick="closeModal('resultsModal')" class="text-slate-400 hover:text-white p-1">✕</button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
+        Our engine cross-referenced your situation against local housing codes and identified 3 specific violations. Exact statutory citations are securely locked behind checkout.
+      </p>
+
+      <div class="space-y-2.5 mb-4">
+        <div class="bg-[#070A12] border border-slate-800 p-3 rounded-xl flex items-center justify-between">
+          <div><span class="font-bold text-xs sm:text-sm text-white block">1. State Habitability Code</span><span class="text-[11px] text-slate-400">Unaddressed maintenance delays</span></div>
+          <span class="text-[10px] font-mono text-[#F59E0B] bg-amber-950/50 border border-amber-800 px-2 py-1 rounded">🔒 Statute Locked</span>
+        </div>
+        <div class="bg-[#070A12] border border-slate-800 p-3 rounded-xl flex items-center justify-between">
+          <div><span class="font-bold text-xs sm:text-sm text-white block">2. Required Deposit Return Deadline</span><span class="text-[11px] text-slate-400">Double statutory damages penalty</span></div>
+          <span class="text-[10px] font-mono text-[#F59E0B] bg-amber-950/50 border border-amber-800 px-2 py-1 rounded">🔒 Statute Locked</span>
+        </div>
+        <div class="bg-[#070A12] border border-slate-800 p-3 rounded-xl flex items-center justify-between">
+          <div><span class="font-bold text-xs sm:text-sm text-white block">3. Unlawful Fees & Financial Loss</span><span class="text-[11px] text-slate-400">Reimbursement grounds</span></div>
+          <span class="text-[10px] font-mono text-[#F59E0B] bg-amber-950/50 border border-amber-800 px-2 py-1 rounded">🔒 Statute Locked</span>
+        </div>
+      </div>
+
+      <button onclick="alert('Proceeding to secure checkout ($29 Ironclad Action Kit).')" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-3.5 rounded-xl text-center text-sm shadow-lg">
+        Put My Landlord On Official Notice Now ($29) →
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function updateCharCount() {
+      const textarea = document.getElementById('intakeText');
+      document.getElementById('charCount').textContent = textarea.value.length.toLocaleString() + ' / 1,000 characters';
+    }
+
+    function startAnalysis() {
+      const textarea = document.getElementById('intakeText');
+      const county = document.getElementById('countySelect').value;
+      if (textarea.value.trim().length < 5) {
+        textarea.value = "My landlord hasn't fixed our heater for 12 days and it's 48°F inside. He's ignoring my texts.";
+        updateCharCount();
+      }
+      document.getElementById('laborCountyLabel').textContent = 'Jurisdiction: ' + county + ' County';
+      document.getElementById('laborModal').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('laborModal').classList.add('hidden');
+        document.getElementById('resultCountyText').textContent = 'Jurisdiction: ' + county + ' County';
+        document.getElementById('resultsModal').classList.remove('hidden');
+      }, 4200);
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

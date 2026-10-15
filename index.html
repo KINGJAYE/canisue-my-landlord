@@ -49,7 +49,7 @@
           <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
           <span class="text-slate-200 font-semibold">PA & NJ Housing Code Database Active</span>
         </div>
-        <button onclick="switchView('vault')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700 font-mono text-[11px] cursor-pointer transition">
+        <button onclick="openVaultLoginModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3.5 py-1.5 rounded-lg border border-slate-700 font-mono text-[11px] cursor-pointer transition">
           🔒 Vault Access
         </button>
       </div>
@@ -264,7 +264,7 @@
             <ul class="space-y-2.5 text-xs text-slate-300 pt-3 border-t border-slate-800 mb-6">
               <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Includes Instant Court-Ready PDF Copy</li>
               <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> USPS First-Class Physical Mail</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Vision OCR Lease Address Extraction</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Forensic Lease Clause & Address Scan</li>
               <li class="flex items-center gap-2 text-slate-600"><span>✕</span> Certified Mail Form 3800 & Signature ERR</li>
             </ul>
           </div>
@@ -279,8 +279,8 @@
             <ul class="space-y-2.5 text-xs text-slate-200 pt-3 border-t border-slate-800 mb-6">
               <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> USPS Certified Mail Form 3800</li>
               <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Electronic Return Receipt (ERR) Signature</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Secure Legal Vault Access</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 14-Day Statutory Countdown Timer</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Hosted Cloud Legal Vault & Evidence Locker</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> The Tenant Defense Playbook Included</li>
               <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Automated Attorney Lead Triage Review</li>
             </ul>
           </div>
@@ -290,7 +290,7 @@
     </div>
   </div>
 
-  <!-- VIEW 2: SECURE LEGAL VAULT DASHBOARD (EMPOWERING TWO-STAGE STATE MACHINE) -->
+  <!-- VIEW 2: SECURE LEGAL VAULT DASHBOARD (DYNAMIC STATE MACHINE) -->
   <div id="viewVault" class="hidden max-w-5xl mx-auto py-8 px-4 sm:px-6">
     <!-- TOP HEADER BAR -->
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
@@ -308,29 +308,7 @@
       </button>
     </div>
 
-    <!-- EMAIL VAULT ACCESS & BONUS CONFIRMATION BANNER -->
-    <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-4 sm:p-5 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div class="flex items-start sm:items-center gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-800/60 flex items-center justify-center text-emerald-400 shrink-0 font-bold">
-          ✉️
-        </div>
-        <div>
-          <h2 class="text-xs sm:text-sm font-bold text-white">
-            Check Your Email : Personal Vault Link & Court-Ready Notice Dispatched
-          </h2>
-          <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5 leading-relaxed">
-            Your permanent vault access link, official PDF notice, and evidence locker for uploading photos have been sent to <span id="vaultUserEmailDisplay" class="text-emerald-400 font-mono font-semibold">your email</span>.
-          </p>
-        </div>
-      </div>
-      <div class="shrink-0">
-        <span class="text-[10px] font-mono text-slate-300 bg-[#070A12] border border-slate-800 px-3 py-1.5 rounded-lg inline-block">
-          🔒 Cloud Vault Hosted & Active
-        </span>
-      </div>
-    </div>
-
-    <!-- VAULT STATUS CARDS (DYNAMIC TWO-STAGE) -->
+    <!-- VAULT STATUS CARDS -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
       <!-- Card 1: 14-Day Cure Clock -->
       <div class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6">
@@ -356,7 +334,7 @@
           Certified Mail Dispatch : Queued & Protected
         </div>
         <p id="postalSubtext" class="text-[11px] text-slate-400 leading-relaxed">
-          Your notice is prepared. We are just verifying your final address details to ensure absolute delivery accuracy before the postal service prints it.
+          Your notice is prepared. We are verifying your final address details to ensure absolute delivery accuracy before the postal service prints it.
         </p>
       </div>
 
@@ -368,14 +346,14 @@
         </div>
         <div id="activePackageTitle" class="text-sm font-bold text-white mb-1.5">Ironclad Action Kit Active</div>
         <p class="text-[11px] text-slate-400 leading-relaxed">
-          Your purchased notice is already powerful and court-ready. Full legal vault access and attorney triage review are unlocked.
+          Your purchased notice is already powerful and court-ready. Full legal vault access, evidence locker, and Defense Playbook unlocked.
         </p>
       </div>
     </div>
 
-    <!-- OPTIONAL LEASE BOOSTER CARD (INTERACTIVE GATEWAY WITH OPTIONAL BYPASS) -->
+    <!-- STAGE 1: OPTIONAL LEASE BOOSTER CARD -->
     <div id="leaseBoosterCard" class="bg-[#0F172A] border border-slate-800 rounded-2xl p-6 sm:p-8 mb-8 transition-all">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-slate-800 mb-6 gap-3">
+      <div id="boosterHeaderBlock" class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-slate-800 mb-6 gap-3">
         <div>
           <div class="flex items-center gap-2 mb-2">
             <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-800 px-3 py-1 rounded font-bold">
@@ -383,9 +361,9 @@
             </span>
             <span class="text-[11px] text-slate-400 font-medium">100% Optional</span>
           </div>
-          <h3 class="font-extrabold text-white text-lg sm:text-xl">Find Everything Else They Owe You</h3>
+          <h3 class="font-extrabold text-white text-lg sm:text-xl">Take Your Case To Another Level</h3>
           <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed max-w-3xl">
-            Your official notice is already locked and loaded. But if you want to make your case completely airtight, drop your lease agreement below. It takes ten seconds. Our system scans every line for hidden penalty clauses, illegal deposit terms, and extra violations.
+            Your official notice is already fully prepared, backed by local housing statutes, and ready for processing. You can send it right now with complete confidence, or run a deep forensic scan of your lease agreement to uncover hidden statutory violations, illegal clauses, and extra legal leverage to hold your landlord accountable to every standard.
           </p>
         </div>
       </div>
@@ -396,14 +374,14 @@
         <svg class="w-10 h-10 text-emerald-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        <p class="text-sm text-white font-bold mb-1">Drop your lease PDF or contract photos here</p>
+        <p class="text-sm text-white font-bold mb-1">Upload your lease PDF or contract photos</p>
         <p class="text-xs text-slate-400 mb-6 max-w-lg mx-auto">
-          Uncover hidden statutory damages and confirm exact landlord service terms in 10 seconds, or proceed immediately with your prepared notice.
+          Run a deep forensic scan of every line for unenforceable landlord terms and extra violations, or proceed immediately with your prepared notice.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
           <button onclick="document.getElementById('leaseFileInput').click()" class="w-full sm:w-auto bg-red-600 hover:bg-red-500 text-white font-black text-xs sm:text-sm py-3.5 px-7 rounded-xl cursor-pointer transition shadow-lg shadow-red-950/50 flex items-center justify-center gap-2">
-            <span>Upload Lease Agreement (10-Sec Scan)</span>
+            <span>Run Deep Forensic Lease Scan</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
           </button>
 
@@ -413,33 +391,155 @@
         </div>
       </div>
 
-      <!-- STATE 1B: 10-SECOND OCR SCANNING ANIMATION (HIDDEN BY DEFAULT) -->
+      <!-- STATE 1B: FORENSIC SCANNING ANIMATION (HIDDEN BY DEFAULT) -->
       <div id="uploadScanningState" class="hidden border border-slate-800 rounded-2xl p-8 text-center bg-[#070A12]">
         <div class="w-10 h-10 border-2 border-slate-700 border-t-emerald-400 rounded-full animate-spin-custom mx-auto mb-4"></div>
-        <h4 class="text-sm font-bold text-white mb-1">Scanning Lease Clauses & Verifying Service Address...</h4>
-        <p id="leaseScanSubtext" class="text-xs text-slate-400 font-mono">Cross-referencing deposit terms and late fee caps against county code...</p>
+        <h4 class="text-sm font-bold text-white mb-1">Running Deep Forensic Scan on Lease Clauses...</h4>
+        <p id="leaseScanSubtext" class="text-xs text-slate-400 font-mono">Cross-referencing landlord notice requirements and statutory compliance rules...</p>
       </div>
 
-      <!-- STATE 2: DISPATCHED & ACTIVE CONFIRMATION (HIDDEN UNTIL TRIGGERED) -->
-      <div id="uploadSuccessState" class="hidden space-y-4">
-        <div class="bg-emerald-950/40 border border-emerald-800/60 p-4 sm:p-5 rounded-xl flex items-start sm:items-center gap-3.5">
-          <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold">✓</div>
-          <div>
-            <h4 id="successBannerTitle" class="text-xs sm:text-sm font-bold text-emerald-300">
-              Lease Booster Attached & USPS Certified Mail Dispatched!
-            </h4>
-            <p id="successBannerSubtext" class="text-xs text-slate-300 mt-0.5 leading-relaxed">
-              We extracted 2 additional statutory leverage points from your lease, verified your landlord's service details, and released your notice to the Lob API print queue.
-            </p>
+      <!-- STATE 2: MILESTONE GRADUATION WELCOME & ECOSYSTEM ONBOARDING (HIDDEN UNTIL TRIGGERED) -->
+      <div id="uploadSuccessState" class="hidden space-y-6">
+        <!-- Milestone Header Banner -->
+        <div class="bg-gradient-to-r from-emerald-950/70 via-[#0F172A] to-[#0F172A] border border-emerald-800/70 p-5 sm:p-6 rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 font-black text-lg">
+              ✓
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold block mb-1">
+                OFFICIAL ACTION CONFIRMED : QUEUED FOR USPS PRINT & DISPATCH
+              </span>
+              <h3 id="successBannerTitle" class="text-lg sm:text-xl font-extrabold text-white">
+                You Have Taken Official Legal Action to Protect Your Home
+              </h3>
+              <p id="successBannerSubtext" class="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+                Thank you for trusting us with your case. We built this platform to make standing up to negligent landlords as straightforward and powerful as possible. Your notice is now in the fulfillment queue, and we have sent an activation message to <span id="dispatchEmailRecord" class="text-emerald-400 font-mono font-semibold">your email</span> so you can set your password and command your vault from any device.
+              </p>
+            </div>
           </div>
         </div>
 
+        <!-- What Is Waiting In Your Inbox & Hosted Vault (4-Card Ecosystem Grid) -->
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold mb-3.5">
+            What We Just Sent To Your Inbox & Phone:
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Item 1: 1-Step Vault Password & Activation Link -->
+            <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold text-white">1. Fast Vault Setup & Password Link</span>
+                  <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/50 border border-emerald-800/60 px-2 py-0.5 rounded">SENT</span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed mb-3">
+                  Tap the activation link in your email or text message to create your permanent password in seconds so you can log in anytime.
+                </p>
+              </div>
+              <button onclick="openPasswordSetupModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-slate-700 font-bold py-2 rounded-lg text-[11px] cursor-pointer transition">
+                Set Up My Vault Password Now →
+              </button>
+            </div>
+
+            <!-- Item 2: The Tenant Defense Playbook -->
+            <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-bold text-white">2. The Tenant Defense Playbook</span>
+                  <span class="text-[10px] font-mono text-amber-400 bg-amber-950/50 border border-amber-800/60 px-2 py-0.5 rounded">UNLOCKED</span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed mb-3">
+                  Your tactical toolkit covering critical dos and don'ts: how legal rent escrow works, avoiding common landlord traps, and keeping your upper hand.
+                </p>
+              </div>
+              <button onclick="openPlaybookModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold py-2 rounded-lg text-[11px] cursor-pointer transition">
+                Open Tenant Defense Playbook →
+              </button>
+            </div>
+
+            <!-- Item 3: Court-Ready PDF & Postal Record -->
+            <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-white">3. Court-Ready PDF & Postal Record</span>
+                <span class="text-[10px] font-mono text-blue-400 bg-blue-950/50 border border-blue-800/60 px-2 py-0.5 rounded">FORM 3800</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">
+                Your timestamped notice with cited county statutes is archived in your vault. Live USPS Certified Mail tracking updates automatically upon carrier intake.
+              </p>
+            </div>
+
+            <!-- Item 4: Digital Evidence Locker -->
+            <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-white">4. Digital Evidence Locker</span>
+                <span class="text-[10px] font-mono text-purple-400 bg-purple-950/50 border border-purple-800/60 px-2 py-0.5 rounded">CLOUD HOSTED</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">
+                Upload photos, videos, repair receipts, and text screenshots anytime from your phone. If you skipped the lease scan, you can still add it later inside your vault.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Honest Postal Dispatch Ledger + Demo Delivery Simulator -->
         <div class="bg-[#070A12] border border-slate-800 p-4 sm:p-5 rounded-xl font-mono text-xs space-y-2 text-slate-300">
-          <div class="text-emerald-400 font-bold mb-2">📦 Official USPS Certified Mail & Vault Record:</div>
-          <div>• USPS Tracking Number: <span class="text-white font-semibold">9407 1112 0250 1492 (Form 3800 Certified Mail)</span></div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-800">
+            <span class="text-emerald-400 font-bold">📦 Official Lob API Postal Fulfillment Ledger:</span>
+            <button id="simulateDeliveryBtn" onclick="simulateUSPSDelivery()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3 py-1 rounded text-[10px] font-sans font-bold cursor-pointer transition">
+              ⚡ Simulate Confirmed USPS Delivery & Signature (Demo Preview)
+            </button>
+          </div>
+          <div>• Dispatch Status: <span id="ledgerDispatchStatus" class="text-amber-300 font-semibold">Queued for USPS Print & Dispatch</span></div>
+          <div>• Certified Tracking #: <span id="ledgerTrackingNumber" class="text-white">Generating Upon Carrier Intake (USPS Form 3800)</span></div>
           <div>• Delivery Requirement: <span class="text-white">Physical Signature & Electronic Return Receipt (ERR)</span></div>
-          <div>• 14-Day Cure Clock: <span class="text-emerald-400 font-semibold">Active & Counting Down</span></div>
-          <div>• Personal Vault Copy: <span class="text-white">Sent to <span id="dispatchEmailRecord">your email</span></span></div>
+          <div>• 14-Day Cure Clock: <span id="ledgerClockStatus" class="text-slate-300">Activates Upon Confirmed Mailbox Delivery</span></div>
+        </div>
+
+        <!-- STAGE 3: POST-DELIVERY REVIEW & NEIGHBOR REFERRAL LOOP (REVEALED UPON CONFIRMED DELIVERY) -->
+        <div id="postDeliveryReferralCard" class="hidden bg-gradient-to-r from-[#0F172A] via-slate-900 to-[#0F172A] border-2 border-emerald-500/60 rounded-2xl p-5 sm:p-6 shadow-xl">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800 mb-4">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold block mb-1">
+                USPS SIGNATURE CONFIRMED : 14-DAY STATUTORY CLOCK RUNNING
+              </span>
+              <h4 class="text-base sm:text-lg font-extrabold text-white">
+                Your Landlord Has Officially Been Served.
+              </h4>
+              <p class="text-xs text-slate-300 mt-0.5">
+                Electronic Return Receipt (ERR) signature archived in your vault. Your landlord is now on the clock.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- Review Ask -->
+            <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+              <h5 class="text-xs font-bold text-white mb-1">Did we give you peace of mind?</h5>
+              <p class="text-[11px] text-slate-400 mb-3">
+                Your feedback helps other tenants in Pennsylvania and New Jersey know they don't have to get pushed around.
+              </p>
+              <div class="flex items-center gap-2">
+                <button onclick="submitQuickReview(this)" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-black text-xs px-4 py-2 rounded-lg cursor-pointer transition">
+                  ★★★★★ Leave a Quick Review
+                </button>
+              </div>
+            </div>
+
+            <!-- Neighbor Solidarity Referral -->
+            <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+              <h5 class="text-xs font-bold text-white mb-1">Are your neighbors dealing with the same landlord?</h5>
+              <p class="text-[11px] text-slate-400 mb-3">
+                Negligent landlords count on tenants staying quiet. Share your private invite link so your neighbors can cite the exact same housing codes.
+              </p>
+              <div class="flex items-center gap-2">
+                <input type="text" readonly value="https://canisuemylandlord.com/?invite=PA89" class="bg-[#0F172A] border border-slate-800 rounded-lg px-2.5 py-1.5 text-[11px] font-mono text-slate-300 w-full focus:outline-none" />
+                <button onclick="copyReferralLink(this)" class="bg-red-600 hover:bg-red-500 text-white font-bold text-xs px-3.5 py-1.5 rounded-lg shrink-0 cursor-pointer transition">
+                  Copy Link
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -493,11 +593,11 @@
           <span class="text-[10px] font-mono text-[#F59E0B] bg-amber-950/50 border border-amber-800 px-2 py-1 rounded">🔒 Statute Locked</span>
         </div>
         <div class="bg-[#070A12] border border-slate-800 p-3 rounded-xl flex items-center justify-between">
-          <div><span class="font-bold text-xs sm:text-sm text-white block">2. Required Deposit Return Deadline</span><span class="text-[11px] text-slate-400">Double statutory damages penalty</span></div>
+          <div><span class="font-bold text-xs sm:text-sm text-white block">2. Required Deposit Return Deadline</span><span class="text-[11px] text-slate-400">Statutory compliance & deadline rules</span></div>
           <span class="text-[10px] font-mono text-[#F59E0B] bg-amber-950/50 border border-amber-800 px-2 py-1 rounded">🔒 Statute Locked</span>
         </div>
         <div class="bg-[#070A12] border border-slate-800 p-3 rounded-xl flex items-center justify-between">
-          <div><span class="font-bold text-xs sm:text-sm text-white block">3. Unlawful Fees & Financial Loss</span><span class="text-[11px] text-slate-400">Reimbursement grounds</span></div>
+          <div><span class="font-bold text-xs sm:text-sm text-white block">3. Duty to Repair & Tenant Remedies</span><span class="text-[11px] text-slate-400">Official notice & cure enforcement</span></div>
           <span class="text-[10px] font-mono text-[#F59E0B] bg-amber-950/50 border border-amber-800 px-2 py-1 rounded">🔒 Statute Locked</span>
         </div>
       </div>
@@ -508,7 +608,7 @@
     </div>
   </div>
 
-  <!-- SECURE CHECKOUT, EMAIL VAULT ANCHOR & LANDLORD ADDRESS GATE MODAL -->
+  <!-- SECURE CHECKOUT & LANDLORD ADDRESS GATE MODAL -->
   <div id="checkoutModal" class="hidden fixed inset-0 bg-[#070A12]/90 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-[#0F172A] border border-slate-800 max-w-lg w-full rounded-2xl p-6 sm:p-8 text-left shadow-2xl relative my-6">
       <div class="flex items-start justify-between gap-3 pb-4 border-b border-slate-800 mb-5">
@@ -521,9 +621,9 @@
 
       <div id="checkoutFormBody" class="space-y-4 mb-6">
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Your Email Address (For Personal Vault & Notice Delivery)</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">Your Email Address (For Vault Setup & Notice Copy)</label>
           <input type="email" id="tenantEmail" placeholder="e.g. tenant@email.com" class="w-full bg-[#070A12] border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-slate-600" />
-          <p class="text-[11px] text-slate-500 mt-1">We send your hosted Legal Vault link, PDF notice, and evidence locker access here.</p>
+          <p class="text-[11px] text-slate-500 mt-1">We send your password activation link, PDF notice, and Tenant Defense Playbook here.</p>
         </div>
 
         <div>
@@ -543,7 +643,7 @@
             <span id="summaryPackage" class="text-white font-semibold">Ironclad Action Kit</span>
           </div>
           <div class="flex justify-between text-xs text-slate-400">
-            <span>USPS Certified Mail & Hosted Legal Vault</span>
+            <span>USPS Certified Mail, Hosted Vault & Defense Playbook</span>
             <span class="text-emerald-400 font-semibold">Included</span>
           </div>
           <div class="pt-2 border-t border-slate-800 flex justify-between text-sm font-extrabold text-white">
@@ -557,6 +657,113 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- THE TENANT DEFENSE PLAYBOOK MODAL -->
+  <div id="playbookModal" class="hidden fixed inset-0 bg-[#070A12]/90 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#0F172A] border border-slate-800 max-w-2xl w-full rounded-2xl p-6 sm:p-8 text-left shadow-2xl relative my-6">
+      <div class="flex items-start justify-between gap-3 pb-4 border-b border-slate-800 mb-5">
+        <div>
+          <span class="text-[10px] font-mono text-amber-400 bg-amber-950/60 border border-amber-800/60 px-2.5 py-1 rounded font-bold">INCLUDED TACTICAL TOOLKIT</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-1.5">The Tenant Defense Playbook</h3>
+          <p class="text-xs text-slate-400 mt-0.5">Critical Dos and Don'ts While Your Landlord Is On Notice</p>
+        </div>
+        <button onclick="closeModal('playbookModal')" class="text-slate-400 hover:text-white p-1 cursor-pointer">✕</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+        <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-2">
+            <span class="text-red-400 font-mono">01.</span> Never Withhold Rent Informally (The Escrow Rule)
+          </h4>
+          <p class="text-xs text-slate-400">
+            Do not simply stop paying rent into your pocket. Landlords wait for this mistake so they can file a fast non-payment eviction. If state law permits rent withholding for habitability failures, funds must be deposited into a dedicated, documented escrow account after the statutory notice period expires.
+          </p>
+        </div>
+
+        <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-2">
+            <span class="text-emerald-400 font-mono">02.</span> Keep Every Interaction in Writing
+          </h4>
+          <p class="text-xs text-slate-400">
+            Once your certified notice lands, your landlord may call you to make verbal promises or pressure you. Follow up any phone conversation with a brief text or email: <em>"Following up on our call today to confirm you stated the repair will happen on [Date]."</em> Upload screenshots straight into your Vault Evidence Locker.
+          </p>
+        </div>
+
+        <div class="bg-[#070A12] border border-slate-800 p-4 rounded-xl">
+          <h4 class="font-bold text-white mb-1 flex items-center gap-2">
+            <span class="text-amber-400 font-mono">03.</span> Document Any Sudden Retaliation
+          </h4>
+          <p class="text-xs text-slate-400">
+            Both Pennsylvania and New Jersey laws prohibit landlord retaliation after a tenant exercises their legal housing rights. Log any sudden fee additions, lock threats, or hostile messages immediately inside your vault.
+          </p>
+        </div>
+      </div>
+
+      <button onclick="closeModal('playbookModal')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-black py-3.5 rounded-xl text-center text-xs sm:text-sm cursor-pointer transition">
+        Got It : Return to My Legal Vault
+      </button>
+    </div>
+  </div>
+
+  <!-- 1-STEP VAULT PASSWORD CREATION MODAL (SIMULATES EMAIL/SMS LINK FLOW) -->
+  <div id="passwordSetupModal" class="hidden fixed inset-0 bg-[#070A12]/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0F172A] border border-slate-800 max-w-md w-full rounded-2xl p-6 sm:p-8 text-left shadow-2xl relative">
+      <div class="flex items-start justify-between gap-3 pb-4 border-b border-slate-800 mb-5">
+        <div>
+          <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded">1-STEP VAULT ACTIVATION</span>
+          <h3 class="text-lg sm:text-xl font-extrabold text-white mt-1.5">Set Your Vault Password</h3>
+        </div>
+        <button onclick="closeModal('passwordSetupModal')" class="text-slate-400 hover:text-white p-1 cursor-pointer">✕</button>
+      </div>
+
+      <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+        Create your password below so you can log back into <strong class="text-white">CanISueMyLandlord.com</strong> anytime from your phone or computer.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Vault Account Email</label>
+          <input type="email" id="setupEmailField" readonly value="tenant@verified-vault.com" class="w-full bg-[#070A12] border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs font-mono text-slate-400" />
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">Create Password</label>
+          <input type="password" id="newVaultPassword" placeholder="Enter a secure password" class="w-full bg-[#070A12] border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-600" />
+        </div>
+      </div>
+
+      <button onclick="saveVaultPassword()" class="w-full bg-red-600 hover:bg-red-500 text-white font-black py-3.5 rounded-xl text-xs sm:text-sm cursor-pointer transition">
+        Save Password & Lock In Vault Access
+      </button>
+    </div>
+  </div>
+
+  <!-- RETURNING TENANT VAULT LOGIN MODAL -->
+  <div id="vaultLoginModal" class="hidden fixed inset-0 bg-[#070A12]/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0F172A] border border-slate-800 max-w-md w-full rounded-2xl p-6 sm:p-8 text-left shadow-2xl relative">
+      <div class="flex items-start justify-between gap-3 pb-4 border-b border-slate-800 mb-5">
+        <div>
+          <span class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded">HOSTED CLOUD VAULT</span>
+          <h3 class="text-lg sm:text-xl font-extrabold text-white mt-1.5">Log In to Your Legal Vault</h3>
+        </div>
+        <button onclick="closeModal('vaultLoginModal')" class="text-slate-400 hover:text-white p-1 cursor-pointer">✕</button>
+      </div>
+
+      <div class="space-y-4 mb-6">
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">Email Address</label>
+          <input type="email" id="loginEmailInput" placeholder="e.g. tenant@email.com" class="w-full bg-[#070A12] border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-600" />
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-1">Password</label>
+          <input type="password" id="loginPasswordInput" placeholder="••••••••" class="w-full bg-[#070A12] border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-600" />
+        </div>
+      </div>
+
+      <button onclick="handleReturningLogin()" class="w-full bg-red-600 hover:bg-red-500 text-white font-black py-3.5 rounded-xl text-xs sm:text-sm cursor-pointer transition">
+        Access My Vault →
+      </button>
     </div>
   </div>
 
@@ -632,8 +839,8 @@
       if (!nameInput) document.getElementById('landlordName').value = 'Apex Property Management LLC';
       if (!addrInput) document.getElementById('landlordAddress').value = '123 Main St, Suite 400';
 
-      document.getElementById('vaultUserEmailDisplay').textContent = finalEmail;
       document.getElementById('dispatchEmailRecord').textContent = finalEmail;
+      document.getElementById('setupEmailField').value = finalEmail;
 
       document.getElementById('checkoutModal').classList.add('hidden');
       switchView('vault');
@@ -646,7 +853,7 @@
       document.getElementById('uploadScanningState').classList.remove('hidden');
 
       setTimeout(() => {
-        document.getElementById('leaseScanSubtext').textContent = 'Extracting landlord notice address & hidden penalty clauses...';
+        document.getElementById('leaseScanSubtext').textContent = 'Isolating unenforceable lease clauses & verifying service address...';
       }, 1200);
 
       setTimeout(() => {
@@ -656,44 +863,78 @@
     }
 
     function finalizeVaultDispatch(withLeaseBooster) {
-      // 1. Update Top Vault Status Banner
+      // 1. Update Top Vault Status Banner to Honest Print & Dispatch Queue
       const vaultBadge = document.getElementById('vaultStatusBadge');
       vaultBadge.className = "text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded font-bold tracking-wide";
-      vaultBadge.textContent = "SECURE LEGAL VAULT ACTIVE : DISPATCHED";
+      vaultBadge.textContent = "QUEUED FOR USPS PRINT & DISPATCH";
 
-      // 2. Activate 14-Day Statutory Cure Clock
+      // 2. Keep Statutory Clock Honest (Activates Upon Mailbox Delivery)
       const clockInd = document.getElementById('clockStatusIndicator');
-      clockInd.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse";
-      clockInd.textContent = "";
+      clockInd.className = "text-[10px] font-mono text-amber-400 bg-amber-950/60 border border-amber-800/60 px-2.5 py-0.5 rounded";
+      clockInd.textContent = "AWAITING DELIVERY";
 
       const timerEl = document.getElementById('countdownTimer');
-      timerEl.className = "text-2xl font-extrabold font-mono text-white mb-2";
-      document.getElementById('clockSubtext').textContent = "Time remaining for landlord response before default escalation under local housing code.";
+      timerEl.textContent = "14-Day Cure Clock : Armed";
+      document.getElementById('clockSubtext').textContent = "Starts counting down the exact moment USPS confirms certified delivery to your landlord.";
 
-      startLiveCountdown();
-
-      // 3. Update Postal Card to Dispatched via Lob API
+      // 3. Update Postal Card to Honest Pre-Carrier Intake State
       const postalBadge = document.getElementById('postalStatusBadge');
       postalBadge.className = "text-[10px] font-mono text-blue-400 bg-blue-950/60 border border-blue-800/60 px-2.5 py-0.5 rounded";
-      postalBadge.textContent = "FORM 3800";
-      document.getElementById('postalTitle').textContent = "Dispatched via Lob API";
-      document.getElementById('postalSubtext').innerHTML = 'Tracking #: <span class="font-mono text-slate-200 font-semibold">9407 1112 0250 1492</span> (Signature Required)';
+      postalBadge.textContent = "PRINT QUEUE";
+      document.getElementById('postalTitle').textContent = "Queued for USPS Print & Dispatch";
+      document.getElementById('postalSubtext').textContent = "Lob API fulfillment active. Live Form 3800 tracking number populates upon USPS carrier intake.";
 
-      // 4. Reveal Final Confirmation State inside Booster Card
+      // 4. Hide Booster Header & Dropzone, Reveal Milestone Graduation Screen
+      document.getElementById('boosterHeaderBlock').classList.add('hidden');
       document.getElementById('uploadDropZone').classList.add('hidden');
       document.getElementById('uploadScanningState').classList.add('hidden');
 
-      if (!withLeaseBooster) {
-        document.getElementById('successBannerTitle').textContent = "Official Notice Dispatched via Lob API!";
-        document.getElementById('successBannerSubtext').textContent = "Your court-ready notice has been queued for USPS Certified Mail fulfillment. You can still upload your lease agreement anytime from your emailed Vault link.";
+      const emailVal = document.getElementById('setupEmailField').value || 'your email';
+
+      if (withLeaseBooster) {
+        document.getElementById('successBannerTitle').textContent = "Deep Forensic Scan Complete : Notice Queued for USPS Print & Dispatch";
+        document.getElementById('successBannerSubtext').innerHTML = 'We flagged additional statutory compliance points from your lease, verified your landlord service details, and placed your notice in the USPS Certified Mail fulfillment queue. Your vault activation link and toolkit have been sent to <span class="text-emerald-400 font-mono font-semibold">' + emailVal + '</span>.';
+      } else {
+        document.getElementById('successBannerTitle').textContent = "You Have Taken Official Legal Action to Protect Your Home";
+        document.getElementById('successBannerSubtext').innerHTML = 'Thank you for trusting us with your case. Your court-ready notice is now queued for USPS Certified Mail print and dispatch. We just sent an activation message to <span class="text-emerald-400 font-mono font-semibold">' + emailVal + '</span> with your password setup link, evidence locker, and Tenant Defense Playbook.';
       }
 
       document.getElementById('uploadSuccessState').classList.remove('hidden');
     }
 
+    function simulateUSPSDelivery() {
+      // Transitions the Vault to the Post-Delivery State (Live Clock + Tracking + Referral Loop)
+      const vaultBadge = document.getElementById('vaultStatusBadge');
+      vaultBadge.className = "text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded font-bold tracking-wide";
+      vaultBadge.textContent = "DELIVERED & SIGNED : 14-DAY CLOCK ACTIVE";
+
+      const clockInd = document.getElementById('clockStatusIndicator');
+      clockInd.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse";
+      clockInd.textContent = "";
+
+      document.getElementById('clockSubtext').textContent = "Time remaining for landlord response before default escalation under local housing code.";
+      startLiveCountdown();
+
+      const postalBadge = document.getElementById('postalStatusBadge');
+      postalBadge.className = "text-[10px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-0.5 rounded";
+      postalBadge.textContent = "DELIVERED (ERR)";
+      document.getElementById('postalTitle').textContent = "USPS Certified Mail Delivered";
+      document.getElementById('postalSubtext').innerHTML = 'Tracking #: <span class="font-mono text-slate-200 font-semibold">9407 1112 0250 1492</span> (Signature Verified)';
+
+      document.getElementById('ledgerDispatchStatus').className = "text-emerald-400 font-semibold";
+      document.getElementById('ledgerDispatchStatus').textContent = "Delivered & Signed (Form 3800 ERR Archived)";
+      document.getElementById('ledgerTrackingNumber').innerHTML = '<span class="text-emerald-400 font-semibold">9407 1112 0250 1492</span> (Active Carrier Record)';
+      document.getElementById('ledgerClockStatus').className = "text-emerald-400 font-semibold";
+      document.getElementById('ledgerClockStatus').textContent = "Active & Counting Down (14-Day Cure Period)";
+
+      document.getElementById('simulateDeliveryBtn').classList.add('hidden');
+      document.getElementById('postDeliveryReferralCard').classList.remove('hidden');
+    }
+
     function startLiveCountdown() {
       if (countdownInterval) clearInterval(countdownInterval);
       const timerEl = document.getElementById('countdownTimer');
+      timerEl.className = "text-2xl font-extrabold font-mono text-white mb-2";
       function updateDisplay() {
         const days = Math.floor(remainingSeconds / (24 * 3600));
         const hours = Math.floor((remainingSeconds % (24 * 3600)) / 3600);
@@ -708,6 +949,49 @@
       }
       updateDisplay();
       countdownInterval = setInterval(updateDisplay, 1000);
+    }
+
+    function openPlaybookModal() {
+      document.getElementById('playbookModal').classList.remove('hidden');
+    }
+
+    function openPasswordSetupModal() {
+      document.getElementById('passwordSetupModal').classList.remove('hidden');
+    }
+
+    function saveVaultPassword() {
+      const pwd = document.getElementById('newVaultPassword').value;
+      if (!pwd) {
+        alert('Please enter a password to secure your vault.');
+        return;
+      }
+      document.getElementById('passwordSetupModal').classList.add('hidden');
+      alert('Vault password saved! You can now log in anytime via the top Vault Access button.');
+    }
+
+    function openVaultLoginModal() {
+      document.getElementById('vaultLoginModal').classList.remove('hidden');
+    }
+
+    function handleReturningLogin() {
+      const email = document.getElementById('loginEmailInput').value.trim();
+      if (email) {
+        document.getElementById('dispatchEmailRecord').textContent = email;
+        document.getElementById('setupEmailField').value = email;
+      }
+      document.getElementById('vaultLoginModal').classList.add('hidden');
+      switchView('vault');
+    }
+
+    function submitQuickReview(btn) {
+      btn.textContent = "✓ Thank You For Your Review!";
+      btn.className = "bg-slate-800 text-emerald-400 font-bold text-xs px-4 py-2 rounded-lg border border-emerald-800/60";
+    }
+
+    function copyReferralLink(btn) {
+      navigator.clipboard.writeText("https://canisuemylandlord.com/?invite=PA89");
+      btn.textContent = "Copied!";
+      setTimeout(() => { btn.textContent = "Copy Link"; }, 2000);
     }
 
     function closeModal(modalId) {
